@@ -22,6 +22,7 @@ public class CollisionDetectionScript : MonoBehaviour
         if (collision.name == "Human")
         {
             m_Rigidbody.constraints = RigidbodyConstraints2D.None;
+            m_Rigidbody.freezeRotation = true;
         }
         else
         {

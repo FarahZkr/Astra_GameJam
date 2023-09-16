@@ -6,15 +6,12 @@ public class AltMovement : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody;
     public float moveSpeed;
-    public bool canJump;
+    public bool isGrounded;
     public float jumpForce;
 
     void Start()
     {
-
-        canJump = false;
         m_Rigidbody = GetComponent<Rigidbody2D>();
-
     }
 
     void Update()
@@ -25,11 +22,10 @@ public class AltMovement : MonoBehaviour
             m_Rigidbody.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), m_Rigidbody.velocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && canJump == true)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             Vector2 up = new Vector2(0, jumpForce);
             m_Rigidbody.AddForce(up, ForceMode2D.Impulse);
-            canJump = false;
         }
 
 
@@ -38,16 +34,26 @@ public class AltMovement : MonoBehaviour
         m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x * 0.5f, m_Rigidbody.velocity.y);
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (collision.name == "Ground")
+        Vector2 v = transform.position;
+        if (col.gameObject.layer == 3)
         {
-            canJump = true;
+            isGrounded = true;
+            Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+        }
+        if (col.gameObject.layer == 6)
+        {
+
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            isGrounded = false;
+            Debug.Log("WHATS GOING ON");
         }
 
-        else
-        {
-            canJump = false;
-        }
     }
 }

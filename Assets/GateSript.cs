@@ -9,13 +9,13 @@ public class GateSript : MonoBehaviour
     Animator animator;
     public GateButton button;
     public GateButton button1;
-    BoxCollider2D boxCollider;
+    PolygonCollider2D boxCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<PolygonCollider2D>();
     }
 
     // Update is called once per frame

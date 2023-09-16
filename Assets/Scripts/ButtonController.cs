@@ -9,26 +9,25 @@ public class ButtonController : MonoBehaviour
     bool nearPlayer = false;
     Vector3 startPos;
 
-    public GameObject wall;
+    public GameObject platform;
     // Start is called before the first frame update
     void Awake()
     {
-        startPos = wall.transform.position;
+        startPos = platform.transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float platformY = wall.transform.position.y;
+        float platformY = platform.transform.position.y;
 
         if (Input.GetKey(KeyCode.E) && nearPlayer)
         {
-            Debug.Log(startPos.y + 20 + " current position: " + wall.transform.position.y);
 
-            if (platformY >= startPos.y - 2)
+            if (platformY >= startPos.y - 7)
             {
                 Debug.Log("HIT LIM");
-                wall.transform.Translate(Vector2.down * Time.deltaTime * 5);
+                platform.transform.Translate(Vector2.down * Time.deltaTime * 5);
             }
         }
         else
@@ -36,7 +35,7 @@ public class ButtonController : MonoBehaviour
 
             if ((platformY <= startPos.y))
             {
-                wall.transform.Translate(Vector2.up * Time.deltaTime * 2);
+                platform.transform.Translate(Vector2.up * Time.deltaTime * 2);
             }
         }
     }

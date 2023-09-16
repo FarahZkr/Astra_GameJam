@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 45337383}
   - component: {fileID: 45337382}
-  - component: {fileID: 45337384}
+  - component: {fileID: 45337381}
   - component: {fileID: 45337380}
   - component: {fileID: 45337379}
   - component: {fileID: 45337378}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45337377}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c95829b5416b2da43bd10d3026fd62cd, type: 3}
   m_Name: 
@@ -228,6 +228,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &45337381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45337377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f8b7edaf8191641ad7b46be44f7fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  canWalk: 0
+  jumpForce: 5
+  gravity: -9.81
+  gravityScale: 5
+  rb: {fileID: 45337380}
 --- !u!212 &45337382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -295,21 +313,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &45337384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45337377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33f26839913422c4d9f5ae9ca462926c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  isGrounded: 0
-  jumpForce: 0
 --- !u!1 &115751077
 GameObject:
   m_ObjectHideFlags: 0

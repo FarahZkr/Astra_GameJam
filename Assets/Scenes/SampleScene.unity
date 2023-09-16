@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1767586}
   - component: {fileID: 1767585}
   m_Layer: 3
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,9 +264,9 @@ GameObject:
   - component: {fileID: 219993689}
   - component: {fileID: 219993688}
   - component: {fileID: 219993692}
-  - component: {fileID: 219993691}
   - component: {fileID: 219993690}
   - component: {fileID: 219993693}
+  - component: {fileID: 219993694}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -386,22 +386,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0564253}
   m_EdgeRadius: 0
---- !u!114 &219993691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219993687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e63fbd3d4b34254db803161af7554e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGrounded: 0
-  jumpForce: 20
-  gravity: -9.81
-  gravityScale: 5
 --- !u!61 &219993692
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -473,7 +457,22 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 7
+  m_Constraints: 4
+--- !u!114 &219993694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219993687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca31fb609cf7ec4fb5057994e6ccc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1.84
+  canJump: 0
+  jumpForce: 6.8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,10 +575,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1040839193}
   - component: {fileID: 1040839192}
-  - component: {fileID: 1040839191}
   - component: {fileID: 1040839197}
   - component: {fileID: 1040839194}
   - component: {fileID: 1040839196}
+  - component: {fileID: 1040839198}
+  - component: {fileID: 1040839199}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -587,24 +587,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1040839191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040839190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f8b7edaf8191641ad7b46be44f7fdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGrounded: 0
-  canWalk: 0
-  jumpForce: 5
-  gravity: -9.81
-  gravityScale: 5
-  rb: {fileID: 1040839197}
 --- !u!212 &1040839192
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -743,7 +725,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -755,7 +737,67 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1040839198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040839190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f26839913422c4d9f5ae9ca462926c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5.56
+  canJump: 0
+  jumpForce: 12.27
+--- !u!61 &1040839199
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040839190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.053874865}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.1077497}
+  m_EdgeRadius: 0
 --- !u!1 &1852345971
 GameObject:
   m_ObjectHideFlags: 0

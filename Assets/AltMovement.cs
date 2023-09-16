@@ -25,7 +25,7 @@ public class AltMovement : MonoBehaviour
             m_Rigidbody.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), m_Rigidbody.velocity.y);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump == true)
+        if (Input.GetKeyDown(KeyCode.W) && canJump == true)
         {
             Vector2 up = new Vector2(0, jumpForce);
             m_Rigidbody.AddForce(up, ForceMode2D.Impulse);

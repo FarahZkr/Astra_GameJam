@@ -8,7 +8,6 @@ public class AltCatMovement : MonoBehaviour
     public float moveSpeed;
     public bool canJump;
     public float jumpForce;
-    public bool catMove;
 
     void Start()
     {
@@ -20,8 +19,6 @@ public class AltCatMovement : MonoBehaviour
 
     void Update()
     {
-        if (catMove == true)
-        {
             //Apply a force to the RigidBody to make the player move
             if (Input.GetButton("Horizontal2"))
             {
@@ -40,7 +37,7 @@ public class AltCatMovement : MonoBehaviour
 
             m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x * 0.5f, m_Rigidbody.velocity.y);
 
-        }
+        
 
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -50,15 +47,9 @@ public class AltCatMovement : MonoBehaviour
             canJump = true;
         }
 
-        if(collision.name == "cCatBox")
-        {
-            catMove = false;
-        }
-
         else
         {
             canJump = false;
-            catMove = true;
         }
     }
 }

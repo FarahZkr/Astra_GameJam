@@ -820,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  isGrounded: 0
+  isGrounded: 1
   jumpForce: 70
 --- !u!1 &232923998
 GameObject:

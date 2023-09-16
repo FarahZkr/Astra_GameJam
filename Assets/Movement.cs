@@ -5,7 +5,7 @@ using UnityEngine.U2D;
 
 public class Movement : MonoBehaviour
 {
-    public bool isGrounded;
+    // public bool isGrounded;
     public bool canWalk;
     public float jumpForce = 20;
     public float gravity = -9.81f;
@@ -13,11 +13,16 @@ public class Movement : MonoBehaviour
     float velocity;
     bool canJump = true;
     float walkSpeed = 10;
+    public float jumpWalkSpeed = 5;
     public Rigidbody2D rb;
+    BoxCollider2D coll;
+
+    [SerializeField] private LayerMask jumpableGround;
 
     private void Start()
     {
         canWalk = true;
+        coll = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -29,27 +34,32 @@ public class Movement : MonoBehaviour
         {
             velocity = 0;
         }*/
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
             rb.velocity = Vector2.up * jumpForce;
         }
 
         //Player left and right
-        if (Input.GetKey(KeyCode.A) && canWalk)
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector2.left * Time.deltaTime * walkSpeed);
+            transform.Translate(Vector2.left * Time.deltaTime * (isGrounded() ? walkSpeed : jumpWalkSpeed));
 
         }
-        if (Input.GetKey(KeyCode.D) && canWalk)
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector2.right * Time.deltaTime * walkSpeed);
+            transform.Translate(Vector2.right * Time.deltaTime * (isGrounded() ? walkSpeed : jumpWalkSpeed));
         }
 
 
         // transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private bool isGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.down, .1f, jumpableGround);
+    }
+
+    /*void OnCollisionEnter2D(Collision2D col)
     {
         Vector2 v = transform.position;
         if (col.gameObject.layer == 3)
@@ -75,6 +85,6 @@ public class Movement : MonoBehaviour
         {
             canWalk = true;
         }
-    }
+    }*/
 
 }

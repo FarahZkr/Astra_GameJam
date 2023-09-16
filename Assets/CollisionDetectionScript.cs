@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class CollisionDetectionScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Rigidbody2D m_Rigidbody;
+
     void Start()
     {
-        
+        m_Rigidbody = GetComponent<Rigidbody2D>();
+        m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == "Human")
+        {
+            m_Rigidbody.constraints = RigidbodyConstraints2D.None;
+        }
+        else
+        {
+            m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        }
     }
 }

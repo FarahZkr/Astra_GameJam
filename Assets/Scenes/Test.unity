@@ -134,10 +134,8 @@ GameObject:
   - component: {fileID: 45337383}
   - component: {fileID: 45337382}
   - component: {fileID: 45337380}
-  - component: {fileID: 45337379}
-  - component: {fileID: 45337378}
   - component: {fileID: 45337384}
-  - component: {fileID: 45337385}
+  - component: {fileID: 45337379}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -145,18 +143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &45337378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45337377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c95829b5416b2da43bd10d3026fd62cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &45337379
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2003,6 +1989,7 @@ GameObject:
   - component: {fileID: 1998739052}
   - component: {fileID: 1998739051}
   - component: {fileID: 1998739049}
+  - component: {fileID: 1998739054}
   - component: {fileID: 1998739048}
   - component: {fileID: 1998739054}
   m_Layer: 0

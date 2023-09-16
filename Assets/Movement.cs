@@ -59,6 +59,7 @@ public class Movement : MonoBehaviour
         }
         if(col.gameObject.layer == 6)
         {
+
             //transform.position = v;
             canWalk = false;
         }

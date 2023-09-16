@@ -22,16 +22,16 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        velocity += gravity * gravityScale * Time.deltaTime;
+        // velocity += gravity * gravityScale * Time.deltaTime;
 
         // Check if the player is grounded
-        if (isGrounded && velocity < 0)
+        /*if (isGrounded && velocity < 0)
         {
             velocity = 0;
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            velocity = jumpForce;
+            rb.velocity = Vector2.up * jumpForce;
         }
 
         //Player left and right
@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
         }
 
 
-        transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
+        // transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D col)

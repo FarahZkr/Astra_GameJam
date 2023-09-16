@@ -9,7 +9,8 @@ public class CollisionDetectionScript : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
-        m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        m_Rigidbody.constraints |= RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        m_Rigidbody.freezeRotation = true;
     }
 
     void Update()
@@ -22,9 +23,12 @@ public class CollisionDetectionScript : MonoBehaviour
         {
             m_Rigidbody.constraints = RigidbodyConstraints2D.None;
         }
-        else if(collision.name == "Cat")
+        else
         {
             m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            m_Rigidbody.freezeRotation = true;
+
         }
+        //if (collision.name == "Cat")
     }
 }

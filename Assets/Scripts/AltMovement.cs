@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AltMovement : MonoBehaviour
 {
@@ -8,24 +9,44 @@ public class AltMovement : MonoBehaviour
     public float moveSpeed;
     public bool isGrounded;
     public float jumpForce;
+    NavMeshAgent _agent;
+    Animator _animator;
+    SpriteRenderer _spriteRenderer;
 
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponentInChildren<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         //Apply a force to the RigidBody to make the player move
-        if (Input.GetButton("Horizontal"))
-        {
-            m_Rigidbody.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), m_Rigidbody.velocity.y);
-        }
-
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Vector2 up = new Vector2(0, jumpForce);
             m_Rigidbody.AddForce(up, ForceMode2D.Impulse);
+
+        }
+        if (Input.GetButton("Horizontal"))
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                _spriteRenderer.flipX = true;
+                _animator.SetInteger("side", 2);
+            }
+            else
+            {
+                _animator.SetInteger("side",1);
+                _spriteRenderer.flipX = false;
+            }
+            m_Rigidbody.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), m_Rigidbody.velocity.y);
+        }
+        else
+        {
+            _animator.SetInteger("side", 0);
         }
 
 

@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        Vector2 v = transform.position;
         if (col.gameObject.layer == 3)
         {
             isGrounded = true;
@@ -58,6 +59,7 @@ public class Movement : MonoBehaviour
         }
         if(col.gameObject.layer == 6)
         {
+            //transform.position = v;
             canWalk = false;
         }
     }
@@ -68,10 +70,10 @@ public class Movement : MonoBehaviour
             isGrounded = false;
             Debug.Log("WHATS GOING ON");
         }
-        //if (collision.gameObject.layer == 6)
-        //{
-        //    canWalk = true;
-        //}
+        if (collision.gameObject.layer == 6)
+        {
+            canWalk = true;
+        }
     }
 
 }

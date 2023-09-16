@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,32 +7,36 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     bool nearPlayer = false;
-    bool toStop;
     float distance = 0;
     Vector3 startPos;
+    bool hasReachedTop;
 
     public GameObject wall;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         startPos = wall.transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        float platformY = wall.transform.position.y;
 
         if (Input.GetKey(KeyCode.E) && nearPlayer)
         {
-            if (!(wall.transform.position == startPos))
+            Debug.Log(startPos.y + 20 + " current position: " + wall.transform.position.y);
+
+            if (platformY >= startPos.y - 2)
             {
+                Debug.Log("HIT LIM");
                 wall.transform.Translate(Vector2.down * Time.deltaTime * 5);
-                distance += 10;
             }
         }
         else
         {
-            if (!toStop)
+
+            if ((platformY <= startPos.y)) 
             {
                 wall.transform.Translate(Vector2.up * Time.deltaTime * 2);
             }
@@ -42,7 +47,6 @@ public class ButtonController : MonoBehaviour
     {
         if (col.gameObject.layer == 7)
         {
-            toStop = true;
             Debug.Log("entered lim");
         }
         nearPlayer = true;
@@ -53,7 +57,6 @@ public class ButtonController : MonoBehaviour
     {
         if (col.gameObject.layer == 7)
         {
-            toStop = false;
             Debug.Log("ext limit");
         }
         nearPlayer = false;

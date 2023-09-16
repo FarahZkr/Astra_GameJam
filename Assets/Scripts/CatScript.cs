@@ -1,61 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CatScript : MonoBehaviour
 {
-    public bool isGrounded;
-    public float jumpForce = 20;
-    public float gravity = -9.81f;
-    public float gravityScale = 5;
-    float velocity;
-    bool canJump = true;
-    float walkSpeed = 10;
+    Rigidbody2D m_Rigidbody;
+    public float moveSpeed;
+    public bool canJump;
+    public float jumpForce;
+
+    void Start()
+    {
+        moveSpeed = 3;
+        canJump = false;
+        m_Rigidbody = GetComponent<Rigidbody2D>();
+
+    }
 
     void Update()
     {
-        velocity += gravity * gravityScale * Time.deltaTime;
-
-        // Check if the player is grounded
-        if (isGrounded && velocity < 0)
+        //Apply a force to the RigidBody to make the player move
+        if (Input.GetButton("Horizontal2"))
         {
-            velocity = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
-        {
-            velocity = jumpForce;
+            m_Rigidbody.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal2"), m_Rigidbody.velocity.y);
         }
 
-        //Player left and right
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump == true)
         {
-            transform.Translate(Vector2.left * Time.deltaTime * walkSpeed);
-
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector2.right * Time.deltaTime * walkSpeed);
+            Vector2 up = new Vector2(0, jumpForce);
+            m_Rigidbody.AddForce(up, ForceMode2D.Impulse);
+            canJump = false;
         }
 
 
-        transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
+        // Slow Down the player
+
+        m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x * 0.5f, m_Rigidbody.velocity.y);
+
+
+
     }
-
-    void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (col.gameObject.layer == 3)
+        if (collision.name == "Ground")
         {
-            isGrounded = true;
-            Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+            canJump = true;
         }
-    }
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 3)
-        {
-            isGrounded = false;
-            Debug.Log("WHATS GOING ON");
-        }
-    }
 
+        else
+        {
+            canJump = false;
+        }
+    }
 }

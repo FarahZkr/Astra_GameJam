@@ -17,14 +17,14 @@ public class ButtonController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         float platformY = platform.transform.position.y;
 
         if (Input.GetKey(KeyCode.E) && nearPlayer)
         {
 
-            if (platformY >= startPos.y - 7)
+            if (platformY >= startPos.y - 5)
             {
                 Debug.Log("HIT LIM");
                 platform.transform.Translate(Vector2.down * Time.deltaTime * 5);

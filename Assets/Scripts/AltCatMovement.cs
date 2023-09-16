@@ -40,7 +40,6 @@ public class AltCatMovement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        Vector2 v = transform.position;
         if (col.gameObject.layer == 3)
         {
             isGrounded = true;

@@ -34,20 +34,24 @@ public class AltMovement : MonoBehaviour
         m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x * 0.5f, m_Rigidbody.velocity.y);
 
     }
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Vector2 v = transform.position;
         if (col.gameObject.layer == 3)
         {
             isGrounded = true;
             Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         }
-        if (col.gameObject.layer == 6)
-        {
 
+    }
+     void OnTriggerStay2D(Collider2D col)
+       {
+        if (col.gameObject.layer == 3)
+        {
+            isGrounded = true;
+            Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         }
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 3)
         {

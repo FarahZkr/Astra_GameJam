@@ -24,7 +24,7 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && nearPlayer)
         {
 
-            if (platformY >= startPos.y - 5)
+            if (platformY >= startPos.y - 2)
             {
                 Debug.Log("HIT LIM");
                 platform.transform.Translate(Vector2.down * Time.deltaTime * 5);
@@ -32,7 +32,6 @@ public class ButtonController : MonoBehaviour
         }
         else
         {
-
             if ((platformY <= startPos.y))
             {
                 platform.transform.Translate(Vector2.up * Time.deltaTime * 2);

@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 4108690959973477602}
   - component: {fileID: 621234576105850352}
   m_Layer: 5
-  m_Name: Portal
+  m_Name: Portal Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,11 +276,11 @@ RectTransform:
   - {fileID: 4916762276901924921}
   - {fileID: 2924026753315156217}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -7.5, y: -0.63}
+  m_AnchoredPosition: {x: -7.5, y: -0.6300049}
   m_SizeDelta: {x: 3.8, y: 4.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2913381921070470750

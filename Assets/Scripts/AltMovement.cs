@@ -13,10 +13,11 @@ public class AltMovement : MonoBehaviour
     Animator _animator;
     SpriteRenderer _spriteRenderer;
     bool isRight;
-    bool jumped = false;
+    bool canJump;
 
     void Start()
     {
+        canJump = true;
         isRight = false;
         m_Rigidbody = GetComponent<Rigidbody2D>();
         _agent = GetComponent<NavMeshAgent>();
@@ -28,9 +29,8 @@ public class AltMovement : MonoBehaviour
     {
      
         //Apply a force to the RigidBody to make the player move
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && canJump)
         {
-            // _animator.SetInteger("side", 0);
             if (isRight)
             {
                 _spriteRenderer.flipX = false;
@@ -39,12 +39,10 @@ public class AltMovement : MonoBehaviour
             else
             {
                 _spriteRenderer.flipX = true;
-                //_animator.SetInteger("side", 0);
                 _animator.SetInteger("jump", 2);
             }
             Vector2 up = new Vector2(0, jumpForce);
             m_Rigidbody.AddForce(up, ForceMode2D.Impulse);
-            jumped = true;
         }
         else if (Input.GetButton("Horizontal"))
         {
@@ -69,46 +67,29 @@ public class AltMovement : MonoBehaviour
 
 
         // Slow Down the player
-
         m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x * 0.5f, m_Rigidbody.velocity.y);
-
-        //if (jumped)
-        //{
-        //    if (isRight)
-        //    {
-        //        _spriteRenderer.flipX = false;
-        //        _animator.SetInteger("jump", 1);
-        //    }
-        //    else
-        //    {
-        //        _spriteRenderer.flipX = true;
-        //        //_animator.SetInteger("side", 0);
-        //        _animator.SetInteger("jump", 2);
-        //    }
-        //}
 
     }
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.gameObject.layer == 8)
+        {
+            _animator.SetInteger("jump", 0);
+            canJump = false;
+        }
         if (col.gameObject.layer == 3)
         {
             isGrounded = true;
             _animator.SetInteger("jump", 0);
-            jumped = false;
-            //Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         }
 
     }
-     void OnTriggerStay2D(Collider2D col)
-       {
-        if (col.gameObject.layer == 3)
-        {
-            isGrounded = true;
-            //Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
-        }
-    }
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.layer == 8)
+        {
+            canJump = true;
+        }
         if (collision.gameObject.layer == 3)
         {
             isGrounded = false;
@@ -120,12 +101,9 @@ public class AltMovement : MonoBehaviour
             else
             {
                 _spriteRenderer.flipX = true;
-                //_animator.SetInteger("side", 0);
                 _animator.SetInteger("jump", 2);
             }
-            Debug.Log("WHATS GOING ON");
         }
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -135,4 +113,31 @@ public class AltMovement : MonoBehaviour
             m_Rigidbody.AddForce(up, ForceMode2D.Impulse);
         }
     }
+
+    // void OnTriggerStay2D(Collider2D col)
+    //   {
+    //    if (col.gameObject.layer == 3)
+    //    {
+    //        isGrounded = true;
+    //    }
+    //}
+    //void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.layer == 3)
+    //    {
+    //        //isGrounded = false;
+    //        //if (isRight)
+    //        //{
+    //        //    _spriteRenderer.flipX = false;
+    //        //    _animator.SetInteger("jump", 1);
+    //        //}
+    //        //else
+    //        //{
+    //        //    _spriteRenderer.flipX = true;
+    //        //    _animator.SetInteger("jump", 2);
+    //        //}
+    //        Debug.Log("WHATS GOING ON");
+    //    }
+
+    //}
 }

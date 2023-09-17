@@ -490,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
       propertyPath: nextLvlName
-      value: LevelOne
+      value: LevelOneDom
       objectReference: {fileID: 0}
     - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
       propertyPath: textMeshPros.Array.size

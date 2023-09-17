@@ -41,7 +41,7 @@ public class ButtonController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == 7)
+        if (col.gameObject.layer == 7 || col.gameObject.layer == 8)
         {
             Debug.Log("entered lim");
         }
@@ -51,7 +51,7 @@ public class ButtonController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.layer == 7)
+        if (col.gameObject.layer == 7 || col.gameObject.layer == 8)
         {
             Debug.Log("ext limit");
         }

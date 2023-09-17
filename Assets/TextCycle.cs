@@ -10,7 +10,7 @@ public class TextCycle : MonoBehaviour
     private int currentIndex = 0;
     private bool isFading = false;
     private float currentAlpha = 0.0f;
-
+    public string nextLvlName;
     void Start()
     {
         // Ensure all TextMeshPro objects are initially invisible

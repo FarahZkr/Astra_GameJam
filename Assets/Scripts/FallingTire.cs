@@ -26,7 +26,7 @@ public class FallingTire : MonoBehaviour
     void SpawnTires()
     { 
         float randPosX = Random.Range(minX, maxX);
-        tirePrefab = Instantiate(tirePrefab, new Vector2(randPosX, 16.5f), Quaternion.identity);
+        tirePrefab = Instantiate(tirePrefab, new Vector2(randPosX, transform.position.y), Quaternion.identity);
    
         Destroy(tirePrefab, 15);
         Invoke("SpawnTires", Random.Range(timeMin, timeMax));

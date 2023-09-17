@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
 
     public float timeCount;
     public Text timerText;
+    private float totalDuration;
+    private float elapsedTime = 0.0f;
+    private float percentageRemaining = 100.0f;
+    public GameObject player;
+    SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        totalDuration = timeCount;
+        spriteRenderer = player.GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
+        elapsedTime += Time.deltaTime;
+        percentageRemaining = Mathf.Max(0.0f, 100.0f - (elapsedTime / totalDuration) * 100.0f);
 
         if (timeCount > 0)
         {
@@ -21,9 +32,19 @@ public class Timer : MonoBehaviour
         else
         {
             timeCount = 0;
-            SceneManager.LoadScene(sceneName: "BlckOutEnd");
         }
         DisplayTime(timeCount);
+        if (spriteRenderer != null)
+        {
+            Color spriteColor = spriteRenderer.material.color;
+            spriteColor.a = percentageRemaining; // Set the alpha component.
+            spriteRenderer.material.color = spriteColor;
+        }
+        else
+        {
+            Debug.Log("HELLLOOOOOOOOO");
+        }
+        Debug.Log(percentageRemaining);
     }
 
     void DisplayTime(float TimeToDisplay)

@@ -25,12 +25,12 @@ public class Level2 : MonoBehaviour
         if (collision.gameObject.name == "Human" || collision.gameObject.name == "Cat")
         {
             playersEntered++;
+            Debug.Log(playersEntered);
             Destroy(collision.gameObject);
             if (playersEntered == 1)
             {
                 Invoke("CompleteLevel", 2);
             }
-
             else if (playersEntered == 2)
             {
                 CompleteLevel();

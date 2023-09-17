@@ -23,7 +23,7 @@ public class Level2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
             Debug.Log(playersEntered);
-        if (collision.gameObject.name == "Human" || collision.gameObject.name == "Cat")
+        if (collision.gameObject.layer == 7 || collision.gameObject.layer == 8)
         {
             playersEntered++;
             Debug.Log(playersEntered);

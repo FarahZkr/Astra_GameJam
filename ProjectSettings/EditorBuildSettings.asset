@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 91cd37d842d2fb54fa0bd8661690a662
+  - enabled: 1
     path: Assets/Scenes/BlackedOut1.unity
     guid: dc8be3a5ed5d20d448fdc9c6b14b04f2
   - enabled: 1

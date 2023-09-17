@@ -114,13 +114,13 @@ public class AltMovement : MonoBehaviour
         }
     }
 
-    // void OnTriggerStay2D(Collider2D col)
-    //   {
-    //    if (col.gameObject.layer == 3)
-    //    {
-    //        isGrounded = true;
-    //    }
-    //}
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.layer == 3)
+        {
+            isGrounded = true;
+        }
+    }
     //void OnTriggerExit2D(Collider2D collision)
     //{
     //    if (collision.gameObject.layer == 3)

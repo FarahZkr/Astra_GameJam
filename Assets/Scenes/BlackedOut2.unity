@@ -359,8 +359,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -494,8 +494,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -803,8 +803,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280549375
-  m_fontColor: {r: 1, g: 1, b: 0.13679248, a: 1}
+    rgba: 2359295
+  m_fontColor: {r: 1, g: 1, b: 0.13679248, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -938,8 +938,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280549375
-  m_fontColor: {r: 1, g: 1, b: 0.13679248, a: 1}
+    rgba: 2359295
+  m_fontColor: {r: 1, g: 1, b: 0.13679248, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1006,3 +1006,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643694290}
   m_CullTransparentMesh: 1
+--- !u!1001 &1450844984238755310
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3067996516143120206, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_Name
+      value: TxtManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 532.90485
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 263.4959
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5895928
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063121889508065479, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: textMeshPros.Array.data[0]
+      value: 
+      objectReference: {fileID: 1046547742}
+    - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: textMeshPros.Array.data[1]
+      value: 
+      objectReference: {fileID: 1507749159}
+    - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: textMeshPros.Array.data[2]
+      value: 
+      objectReference: {fileID: 794621850}
+    - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: textMeshPros.Array.data[3]
+      value: 
+      objectReference: {fileID: 1643694292}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}

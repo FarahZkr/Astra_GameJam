@@ -39,7 +39,7 @@ public class Level2 : MonoBehaviour
     }
     private void CompleteLevel()
     {
-        //SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene("BlackedOut2");
     }
     IEnumerator StartTimer()
     {

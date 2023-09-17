@@ -354,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
       propertyPath: nextLvlName
-      value: LevelOne
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
       propertyPath: textMeshPros.Array.size
@@ -883,8 +883,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2359295
-  m_fontColor: {r: 1, g: 1, b: 0.13679248, a: 0}
+    rgba: 16761344
+  m_fontColor: {r: 0, g: 0.7607843, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

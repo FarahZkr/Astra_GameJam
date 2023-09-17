@@ -28,7 +28,7 @@ public class TextCycle : MonoBehaviour
                 StartCoroutine(FadeInText());
             else
             {
-                SceneManager.LoadScene("Level2");
+                SceneManager.LoadScene(nextLvlName);
             }
         }
     }

@@ -453,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507039242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.91, y: -3.9, z: -10}
+  m_LocalPosition: {x: -0.99, y: -3.45, z: -10}
   m_LocalScale: {x: 2.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -581,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555536644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5447712, y: 0.03828001, z: -10}
+  m_LocalPosition: {x: -0.99237585, y: 0.03795004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6261,11 +6261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4793642986906322562, guid: ba789ec649c9c254298044467aa36883, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.91
+      value: -0.99
       objectReference: {fileID: 0}
     - target: {fileID: 4793642986906322562, guid: ba789ec649c9c254298044467aa36883, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9
+      value: -3.45
       objectReference: {fileID: 0}
     - target: {fileID: 4793642986906322562, guid: ba789ec649c9c254298044467aa36883, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7887,3 +7887,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2142558067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142558069}
+  - component: {fileID: 2142558068}
+  m_Layer: 0
+  m_Name: TireSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2142558068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142558067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f4d2120b5f5104fa652ae6b1633a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tirePrefab: {fileID: 1056836120414933787, guid: 47c41e9820769ed4cba8104f3e10dbc7, type: 3}
+--- !u!4 &2142558069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142558067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.08, y: 15.61, z: -0.13573569}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

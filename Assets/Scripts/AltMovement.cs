@@ -69,7 +69,7 @@ public class AltMovement : MonoBehaviour
         if (col.gameObject.layer == 3)
         {
             isGrounded = true;
-            Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+            // Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         }
     }
     void OnTriggerExit2D(Collider2D collision)

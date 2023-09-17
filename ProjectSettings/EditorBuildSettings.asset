@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BlckOutEnd.unity
     guid: 52ea97f93aaa82a4db50930e682fc1ba
+  - enabled: 1
+    path: Assets/Scenes/GoodEnd.unity
+    guid: e7193f3d37dc71e4d8f8b0480589f598
   m_configObjects: {}

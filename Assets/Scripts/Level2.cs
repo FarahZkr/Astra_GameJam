@@ -7,6 +7,7 @@ public class Level2 : MonoBehaviour
 {
     public float playersEntered = 0;
     public float delay = 5;
+    public string sceneToTp = "BlackedOut2";
     float timer;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class Level2 : MonoBehaviour
     }
     private void CompleteLevel()
     {
-        SceneManager.LoadScene("BlackedOut2");
+        SceneManager.LoadScene(sceneToTp);
     }
     IEnumerator StartTimer()
     {

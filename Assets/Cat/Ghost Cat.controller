@@ -97,7 +97,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3ff0e1f9d0589604589d5a41241cfc79, type: 2}
+  m_Motion: {fileID: 7400000, guid: 25a53ebc7bf778e45a77e39ef0a18341, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -271,7 +271,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cat
+  m_Name: Ghost Cat
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: side
@@ -396,7 +396,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ba8b08705a7e8434c821c152629f0d0a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 48ab054e4ab860442ac96acadd282145, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -424,7 +424,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3ff0e1f9d0589604589d5a41241cfc79, type: 2}
+  m_Motion: {fileID: 7400000, guid: 25a53ebc7bf778e45a77e39ef0a18341, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -480,7 +480,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ba8b08705a7e8434c821c152629f0d0a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 48ab054e4ab860442ac96acadd282145, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -510,7 +510,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ce01195c21d00584d8d6248042e565ff, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3d32f949747663c47b4728cf3d9ae04b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

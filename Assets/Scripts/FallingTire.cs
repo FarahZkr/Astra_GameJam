@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
+
+
 public class FallingTire : MonoBehaviour
 {
     [SerializeField] GameObject tirePrefab;
-
     private float minX = -10, maxX = 10;
     private float timeMin = 2, timeMax = 7;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,8 @@ public class FallingTire : MonoBehaviour
     { 
         float randPosX = Random.Range(minX, maxX);
         tirePrefab = Instantiate(tirePrefab, new Vector2(randPosX, 16.5f), Quaternion.identity);
-        Debug.Log("tire location: " + randPosX);
-
-        
+   
+        Destroy(tirePrefab, 15);
         Invoke("SpawnTires", Random.Range(timeMin, timeMax));
     
     }

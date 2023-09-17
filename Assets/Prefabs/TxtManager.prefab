@@ -49,5 +49,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fadeInDuration: 2
+  fadeInDuration: 1
   nextLvlName: Level3

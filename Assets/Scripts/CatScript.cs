@@ -8,8 +8,6 @@ public class CatScript : MonoBehaviour
     public float jumpForce = 20;
     public float gravity = -9.81f;
     public float gravityScale = 5;
-    float velocity;
-    bool canJump = true;
     public float walkSpeed = 10;
     public float jumpWalkSpeed = 5;
     public Rigidbody2D rb;

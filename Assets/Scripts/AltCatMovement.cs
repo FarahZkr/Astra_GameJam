@@ -69,6 +69,11 @@ public class AltCatMovement : MonoBehaviour
         {
 
         }
+        if (col.gameObject.tag == "Mushroom")
+        {
+            Vector2 up = new Vector2(0, jumpForce * 2);
+            m_Rigidbody.AddForce(up, ForceMode2D.Impulse);
+        }
     }
     void OnCollisionExit2D(Collision2D collision)
     {

@@ -1063,6 +1063,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
+      propertyPath: nextLvlName
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813135876863452102, guid: feb166daac7c2c94994310aeba1aeb7f, type: 3}
       propertyPath: textMeshPros.Array.data[0]
       value: 
       objectReference: {fileID: 1046547742}
